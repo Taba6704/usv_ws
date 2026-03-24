@@ -1,3 +1,0 @@
-[console_scripts]
-thruster_driver = usv_thrusters.thruster_driver:main
-

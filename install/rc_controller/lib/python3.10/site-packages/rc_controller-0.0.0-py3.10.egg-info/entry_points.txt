@@ -1,3 +1,0 @@
-[console_scripts]
-rc_controller_node = rc_controller.rc_controller_node:main
-
