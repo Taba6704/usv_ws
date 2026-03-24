@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/rc_controller/rc_controller.egg-info
+writing ../../build/rc_controller/rc_controller.egg-info/PKG-INFO
+writing dependency_links to ../../build/rc_controller/rc_controller.egg-info/dependency_links.txt
+writing entry points to ../../build/rc_controller/rc_controller.egg-info/entry_points.txt
+writing requirements to ../../build/rc_controller/rc_controller.egg-info/requires.txt
+writing top-level names to ../../build/rc_controller/rc_controller.egg-info/top_level.txt
+writing manifest file '../../build/rc_controller/rc_controller.egg-info/SOURCES.txt'
+reading manifest file '../../build/rc_controller/rc_controller.egg-info/SOURCES.txt'
+writing manifest file '../../build/rc_controller/rc_controller.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/mobsea/usv_ws/build/rc_controller/build
+creating /home/mobsea/usv_ws/build/rc_controller/build/lib
+creating /home/mobsea/usv_ws/build/rc_controller/build/lib/rc_controller
+copying rc_controller/__init__.py -> /home/mobsea/usv_ws/build/rc_controller/build/lib/rc_controller
+copying rc_controller/rc_controller_node.py -> /home/mobsea/usv_ws/build/rc_controller/build/lib/rc_controller
+running install
+running install_lib
+creating /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller
+copying /home/mobsea/usv_ws/build/rc_controller/build/lib/rc_controller/__init__.py -> /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller
+copying /home/mobsea/usv_ws/build/rc_controller/build/lib/rc_controller/rc_controller_node.py -> /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller
+byte-compiling /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller/rc_controller_node.py to rc_controller_node.cpython-310.pyc
+running install_data
+creating /home/mobsea/usv_ws/install/rc_controller/share/ament_index
+creating /home/mobsea/usv_ws/install/rc_controller/share/ament_index/resource_index
+creating /home/mobsea/usv_ws/install/rc_controller/share/ament_index/resource_index/packages
+copying resource/rc_controller -> /home/mobsea/usv_ws/install/rc_controller/share/ament_index/resource_index/packages
+copying package.xml -> /home/mobsea/usv_ws/install/rc_controller/share/rc_controller
+running install_egg_info
+Copying ../../build/rc_controller/rc_controller.egg-info to /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller-0.0.0-py3.10.egg-info
+running install_scripts
+Installing rc_controller_node script to /home/mobsea/usv_ws/install/rc_controller/lib/rc_controller
+writing list of installed files to '/home/mobsea/usv_ws/build/rc_controller/install.log'

@@ -1,0 +1,37 @@
+[5.401s] Invoking command in '/home/mobsea/usv_ws/src/rc_controller': PYTHONPATH=/home/mobsea/usv_ws/build/rc_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rc_controller build --build-base /home/mobsea/usv_ws/build/rc_controller/build install --record /home/mobsea/usv_ws/build/rc_controller/install.log --single-version-externally-managed install_data
+[6.859s] running egg_info
+[6.862s] creating ../../build/rc_controller/rc_controller.egg-info
+[6.864s] writing ../../build/rc_controller/rc_controller.egg-info/PKG-INFO
+[6.868s] writing dependency_links to ../../build/rc_controller/rc_controller.egg-info/dependency_links.txt
+[6.873s] writing entry points to ../../build/rc_controller/rc_controller.egg-info/entry_points.txt
+[6.877s] writing requirements to ../../build/rc_controller/rc_controller.egg-info/requires.txt
+[6.883s] writing top-level names to ../../build/rc_controller/rc_controller.egg-info/top_level.txt
+[6.887s] writing manifest file '../../build/rc_controller/rc_controller.egg-info/SOURCES.txt'
+[6.891s] reading manifest file '../../build/rc_controller/rc_controller.egg-info/SOURCES.txt'
+[6.895s] writing manifest file '../../build/rc_controller/rc_controller.egg-info/SOURCES.txt'
+[6.896s] running build
+[6.897s] running build_py
+[6.897s] creating /home/mobsea/usv_ws/build/rc_controller/build
+[6.898s] creating /home/mobsea/usv_ws/build/rc_controller/build/lib
+[6.898s] creating /home/mobsea/usv_ws/build/rc_controller/build/lib/rc_controller
+[6.900s] copying rc_controller/__init__.py -> /home/mobsea/usv_ws/build/rc_controller/build/lib/rc_controller
+[6.900s] copying rc_controller/rc_controller_node.py -> /home/mobsea/usv_ws/build/rc_controller/build/lib/rc_controller
+[6.903s] running install
+[6.906s] running install_lib
+[6.909s] creating /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller
+[6.912s] copying /home/mobsea/usv_ws/build/rc_controller/build/lib/rc_controller/__init__.py -> /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller
+[6.915s] copying /home/mobsea/usv_ws/build/rc_controller/build/lib/rc_controller/rc_controller_node.py -> /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller
+[6.918s] byte-compiling /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller/__init__.py to __init__.cpython-310.pyc
+[6.921s] byte-compiling /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller/rc_controller_node.py to rc_controller_node.cpython-310.pyc
+[6.924s] running install_data
+[6.927s] creating /home/mobsea/usv_ws/install/rc_controller/share/ament_index
+[6.930s] creating /home/mobsea/usv_ws/install/rc_controller/share/ament_index/resource_index
+[6.935s] creating /home/mobsea/usv_ws/install/rc_controller/share/ament_index/resource_index/packages
+[6.938s] copying resource/rc_controller -> /home/mobsea/usv_ws/install/rc_controller/share/ament_index/resource_index/packages
+[6.944s] copying package.xml -> /home/mobsea/usv_ws/install/rc_controller/share/rc_controller
+[6.947s] running install_egg_info
+[6.951s] Copying ../../build/rc_controller/rc_controller.egg-info to /home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages/rc_controller-0.0.0-py3.10.egg-info
+[6.955s] running install_scripts
+[7.119s] Installing rc_controller_node script to /home/mobsea/usv_ws/install/rc_controller/lib/rc_controller
+[7.125s] writing list of installed files to '/home/mobsea/usv_ws/build/rc_controller/install.log'
+[7.261s] Invoked command in '/home/mobsea/usv_ws/src/rc_controller' returned '0': PYTHONPATH=/home/mobsea/usv_ws/build/rc_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mobsea/usv_ws/install/rc_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rc_controller build --build-base /home/mobsea/usv_ws/build/rc_controller/build install --record /home/mobsea/usv_ws/build/rc_controller/install.log --single-version-externally-managed install_data

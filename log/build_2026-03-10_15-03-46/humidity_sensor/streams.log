@@ -1,0 +1,36 @@
+[5.405s] Invoking command in '/home/mobsea/usv_ws/build/humidity_sensor': PYTHONPATH=/home/mobsea/usv_ws/build/humidity_sensor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mobsea/usv_ws/install/humidity_sensor/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/mobsea/usv_ws/build/humidity_sensor/build
+[6.934s] running develop
+[7.855s] Removing /home/mobsea/usv_ws/install/humidity_sensor/lib/python3.10/site-packages/humidity-sensor.egg-link (link to .)
+[7.998s] Invoked command in '/home/mobsea/usv_ws/build/humidity_sensor' returned '0': PYTHONPATH=/home/mobsea/usv_ws/build/humidity_sensor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mobsea/usv_ws/install/humidity_sensor/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/mobsea/usv_ws/build/humidity_sensor/build
+[8.007s] Invoking command in '/home/mobsea/usv_ws/src/humidity_sensor': PYTHONPATH=/home/mobsea/usv_ws/build/humidity_sensor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mobsea/usv_ws/install/humidity_sensor/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/humidity_sensor build --build-base /home/mobsea/usv_ws/build/humidity_sensor/build install --record /home/mobsea/usv_ws/build/humidity_sensor/install.log --single-version-externally-managed install_data --force
+[9.052s] running egg_info
+[9.055s] writing ../../build/humidity_sensor/humidity_sensor.egg-info/PKG-INFO
+[9.057s] writing dependency_links to ../../build/humidity_sensor/humidity_sensor.egg-info/dependency_links.txt
+[9.058s] writing entry points to ../../build/humidity_sensor/humidity_sensor.egg-info/entry_points.txt
+[9.059s] writing requirements to ../../build/humidity_sensor/humidity_sensor.egg-info/requires.txt
+[9.060s] writing top-level names to ../../build/humidity_sensor/humidity_sensor.egg-info/top_level.txt
+[9.067s] reading manifest file '../../build/humidity_sensor/humidity_sensor.egg-info/SOURCES.txt'
+[9.071s] writing manifest file '../../build/humidity_sensor/humidity_sensor.egg-info/SOURCES.txt'
+[9.072s] running build
+[9.073s] running build_py
+[9.074s] creating /home/mobsea/usv_ws/build/humidity_sensor/build
+[9.074s] creating /home/mobsea/usv_ws/build/humidity_sensor/build/lib
+[9.075s] creating /home/mobsea/usv_ws/build/humidity_sensor/build/lib/humidity_sensor
+[9.075s] copying humidity_sensor/__init__.py -> /home/mobsea/usv_ws/build/humidity_sensor/build/lib/humidity_sensor
+[9.076s] copying humidity_sensor/humidity_sensor_node.py -> /home/mobsea/usv_ws/build/humidity_sensor/build/lib/humidity_sensor
+[9.076s] running install
+[9.077s] running install_lib
+[9.080s] creating /home/mobsea/usv_ws/install/humidity_sensor/lib/python3.10/site-packages/humidity_sensor
+[9.080s] copying /home/mobsea/usv_ws/build/humidity_sensor/build/lib/humidity_sensor/__init__.py -> /home/mobsea/usv_ws/install/humidity_sensor/lib/python3.10/site-packages/humidity_sensor
+[9.081s] copying /home/mobsea/usv_ws/build/humidity_sensor/build/lib/humidity_sensor/humidity_sensor_node.py -> /home/mobsea/usv_ws/install/humidity_sensor/lib/python3.10/site-packages/humidity_sensor
+[9.083s] byte-compiling /home/mobsea/usv_ws/install/humidity_sensor/lib/python3.10/site-packages/humidity_sensor/__init__.py to __init__.cpython-310.pyc
+[9.085s] byte-compiling /home/mobsea/usv_ws/install/humidity_sensor/lib/python3.10/site-packages/humidity_sensor/humidity_sensor_node.py to humidity_sensor_node.cpython-310.pyc
+[9.087s] running install_data
+[9.088s] copying resource/humidity_sensor -> /home/mobsea/usv_ws/install/humidity_sensor/share/ament_index/resource_index/packages
+[9.088s] copying package.xml -> /home/mobsea/usv_ws/install/humidity_sensor/share/humidity_sensor
+[9.089s] running install_egg_info
+[9.098s] Copying ../../build/humidity_sensor/humidity_sensor.egg-info to /home/mobsea/usv_ws/install/humidity_sensor/lib/python3.10/site-packages/humidity_sensor-0.0.0-py3.10.egg-info
+[9.103s] running install_scripts
+[9.177s] Installing humidity_sensor_node script to /home/mobsea/usv_ws/install/humidity_sensor/lib/humidity_sensor
+[9.179s] writing list of installed files to '/home/mobsea/usv_ws/build/humidity_sensor/install.log'
+[9.309s] Invoked command in '/home/mobsea/usv_ws/src/humidity_sensor' returned '0': PYTHONPATH=/home/mobsea/usv_ws/build/humidity_sensor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mobsea/usv_ws/install/humidity_sensor/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/humidity_sensor build --build-base /home/mobsea/usv_ws/build/humidity_sensor/build install --record /home/mobsea/usv_ws/build/humidity_sensor/install.log --single-version-externally-managed install_data --force

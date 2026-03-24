@@ -1,0 +1,37 @@
+[5.584s] Invoking command in '/home/mobsea/usv_ws/src/usv_thrusters': PYTHONPATH=/home/mobsea/usv_ws/build/usv_thrusters/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mobsea/usv_ws/install/usv_thrusters/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/usv_thrusters build --build-base /home/mobsea/usv_ws/build/usv_thrusters/build install --record /home/mobsea/usv_ws/build/usv_thrusters/install.log --single-version-externally-managed install_data
+[6.999s] running egg_info
+[7.002s] creating ../../build/usv_thrusters/usv_thrusters.egg-info
+[7.006s] writing ../../build/usv_thrusters/usv_thrusters.egg-info/PKG-INFO
+[7.009s] writing dependency_links to ../../build/usv_thrusters/usv_thrusters.egg-info/dependency_links.txt
+[7.013s] writing entry points to ../../build/usv_thrusters/usv_thrusters.egg-info/entry_points.txt
+[7.016s] writing requirements to ../../build/usv_thrusters/usv_thrusters.egg-info/requires.txt
+[7.020s] writing top-level names to ../../build/usv_thrusters/usv_thrusters.egg-info/top_level.txt
+[7.026s] writing manifest file '../../build/usv_thrusters/usv_thrusters.egg-info/SOURCES.txt'
+[7.033s] reading manifest file '../../build/usv_thrusters/usv_thrusters.egg-info/SOURCES.txt'
+[7.039s] writing manifest file '../../build/usv_thrusters/usv_thrusters.egg-info/SOURCES.txt'
+[7.044s] running build
+[7.049s] running build_py
+[7.054s] creating /home/mobsea/usv_ws/build/usv_thrusters/build
+[7.062s] creating /home/mobsea/usv_ws/build/usv_thrusters/build/lib
+[7.067s] creating /home/mobsea/usv_ws/build/usv_thrusters/build/lib/usv_thrusters
+[7.073s] copying usv_thrusters/thruster_driver.py -> /home/mobsea/usv_ws/build/usv_thrusters/build/lib/usv_thrusters
+[7.078s] copying usv_thrusters/__init__.py -> /home/mobsea/usv_ws/build/usv_thrusters/build/lib/usv_thrusters
+[7.083s] running install
+[7.088s] running install_lib
+[7.105s] creating /home/mobsea/usv_ws/install/usv_thrusters/lib/python3.10/site-packages/usv_thrusters
+[7.111s] copying /home/mobsea/usv_ws/build/usv_thrusters/build/lib/usv_thrusters/thruster_driver.py -> /home/mobsea/usv_ws/install/usv_thrusters/lib/python3.10/site-packages/usv_thrusters
+[7.115s] copying /home/mobsea/usv_ws/build/usv_thrusters/build/lib/usv_thrusters/__init__.py -> /home/mobsea/usv_ws/install/usv_thrusters/lib/python3.10/site-packages/usv_thrusters
+[7.120s] byte-compiling /home/mobsea/usv_ws/install/usv_thrusters/lib/python3.10/site-packages/usv_thrusters/thruster_driver.py to thruster_driver.cpython-310.pyc
+[7.124s] byte-compiling /home/mobsea/usv_ws/install/usv_thrusters/lib/python3.10/site-packages/usv_thrusters/__init__.py to __init__.cpython-310.pyc
+[7.130s] running install_data
+[7.138s] creating /home/mobsea/usv_ws/install/usv_thrusters/share/ament_index
+[7.142s] creating /home/mobsea/usv_ws/install/usv_thrusters/share/ament_index/resource_index
+[7.147s] creating /home/mobsea/usv_ws/install/usv_thrusters/share/ament_index/resource_index/packages
+[7.153s] copying resource/usv_thrusters -> /home/mobsea/usv_ws/install/usv_thrusters/share/ament_index/resource_index/packages
+[7.159s] copying package.xml -> /home/mobsea/usv_ws/install/usv_thrusters/share/usv_thrusters
+[7.164s] running install_egg_info
+[7.170s] Copying ../../build/usv_thrusters/usv_thrusters.egg-info to /home/mobsea/usv_ws/install/usv_thrusters/lib/python3.10/site-packages/usv_thrusters-0.0.0-py3.10.egg-info
+[7.175s] running install_scripts
+[7.214s] Installing thruster_driver script to /home/mobsea/usv_ws/install/usv_thrusters/lib/usv_thrusters
+[7.220s] writing list of installed files to '/home/mobsea/usv_ws/build/usv_thrusters/install.log'
+[7.384s] Invoked command in '/home/mobsea/usv_ws/src/usv_thrusters' returned '0': PYTHONPATH=/home/mobsea/usv_ws/build/usv_thrusters/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mobsea/usv_ws/install/usv_thrusters/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/usv_thrusters build --build-base /home/mobsea/usv_ws/build/usv_thrusters/build install --record /home/mobsea/usv_ws/build/usv_thrusters/install.log --single-version-externally-managed install_data
