@@ -23,7 +23,7 @@ class LCDDisplayNode(Node):
         self.lcd_d4 = digitalio.DigitalInOut(board.D25) # GPIO25 = pin 22
         self.lcd_d5 = digitalio.DigitalInOut(board.D24) # GPIO24 = pin 18
         self.lcd_d6 = digitalio.DigitalInOut(board.D22) # GPIO22 = pin 15
-        self.lcd_d7 = digitalio.DigitalInOut(board.D27) # GPIO27 = pin 13
+        self.lcd_d7 = digitalio.DigitalInOut(board.D5)  # GPIO5  = pin 29
 
         # Initialize LCD
         self.lcd = characterlcd.Character_LCD_Mono(

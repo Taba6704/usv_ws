@@ -56,8 +56,8 @@ class ThrusterDriver(Node):
         self.declare_parameter('deadband_us', 20)            # small neutral/stop tolerance
         self.declare_parameter('mix_gain', 1.0)              # overall throttle scale for mixed surge + yaw command
         self.declare_parameter('yaw_mix', 0.6)               # yaw contribution: how strongly yaw modifies left/right thrust
-        self.declare_parameter('left_gpio', 18)              # GPIO 18 for left ESC
-        self.declare_parameter('right_gpio', 19)             # GPIO 19 for right ESC
+        self.declare_parameter('left_gpio', 12)              # GPIO 12 for left ESC
+        self.declare_parameter('right_gpio', 13)             # GPIO 13 for right ESC
         self.declare_parameter('left_sign', 1.0)             # flip left thruster direction if needed
         self.declare_parameter('right_sign', 1.0)            # flip right thruster direction if needed
         self.declare_parameter('watchdog_ms', 500)           # Stop if no cmd within 0.5 s, publishing with cmd_vel topic needs to be fast enough (10-50 Hz) (-r 20)
