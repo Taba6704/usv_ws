@@ -38,8 +38,10 @@ class RcToCmdVel(Node):
         super().__init__('rc_controller_node')
 
         # --- GPIO pins (BCM) ---
-        self.declare_parameter('gpio_throttle', 17)  # CH3 - pin 11
-        self.declare_parameter('gpio_yaw', 27)       # CH4 - pin 13
+        self.declare_parameter('gpio_throttle', 17) # CH3 - pin 11
+        self.declare_parameter('gpio_yaw', 27)      # CH4 - pin 13
+        self.declare_parameter('e_stop_in', 18)     # CH5 - pin 12
+        self.declare_parameter('relay_out', 23)     # relay control pin 16
 
         # --- Calibration ---
         self.declare_parameter('thr_lo', 1010)
@@ -56,8 +58,15 @@ class RcToCmdVel(Node):
         self.declare_parameter('timeout_s', 0.35)
         self.declare_parameter('cmd_topic', '/cmd_vel')
 
+        # E-Stop controll
+        self.declare_parameter('estop_threshold_us', 1500)
+        self.declare_parameter('relay_active_high', True)  # set False if  relay is active-low
+
+        # Read Parameters
         self.gpio_thr = int(self.get_parameter('gpio_throttle').value)
         self.gpio_yaw = int(self.get_parameter('gpio_yaw').value)
+        self.e_stop_in = int(self.get_parameter('e_stop_in').value)
+        self.relay_out = int(self.get_parameter('relay_out').value)
 
         self.thr_lo = int(self.get_parameter('thr_lo').value)
         self.thr_neu = int(self.get_parameter('thr_neutral').value)
@@ -73,6 +82,9 @@ class RcToCmdVel(Node):
         publish_hz = float(self.get_parameter('publish_hz').value)
         cmd_topic = str(self.get_parameter('cmd_topic').value)
 
+        self.estop_threshold_us = int(self.get_parameter('estop_threshold_us').value)
+        self.relay_active_high = bool(self.get_parameter('relay_active_high').value)
+
         # Publisher
         self.pub = self.create_publisher(Twist, cmd_topic, 10)
 
@@ -83,6 +95,15 @@ class RcToCmdVel(Node):
 
         self.pi.set_mode(self.gpio_thr, pigpio.INPUT)
         self.pi.set_mode(self.gpio_yaw, pigpio.INPUT)
+        self.pi.set_mode(self.e_stop_in, pigpio.INPUT)
+        self.pi.set_mode(self.relay_out, pigpio.OUTPUT)
+
+        # Initialize E-Stop relay to safe
+        self._estop_us = None
+        self._estop_rise_tick = None
+
+        # Start in e-stop/safe state until valid switch input is received
+        self._set_relay(False)
 
         # Latest pulse widths
         self._thr_us = None
@@ -98,6 +119,7 @@ class RcToCmdVel(Node):
         # Register callbacks
         self.cb_thr = self.pi.callback(self.gpio_thr, pigpio.EITHER_EDGE, self._cb_thr)
         self.cb_yaw = self.pi.callback(self.gpio_yaw, pigpio.EITHER_EDGE, self._cb_yaw)
+        self.cb_estop = self.pi.callback(self.e_stop_in, pigpio.EITHER_EDGE, self._cb_estop)
 
         # Timer to publish
         self.timer = self.create_timer(1.0 / publish_hz, self._tick)
@@ -106,6 +128,20 @@ class RcToCmdVel(Node):
             f"RC->cmd_vel publishing to {cmd_topic} at {publish_hz} Hz "
             f"(thr GPIO {self.gpio_thr}, yaw GPIO {self.gpio_yaw})"
         )
+
+    def _set_relay(self, enabled: bool):
+        if self.relay_active_high:
+            level = 1 if enabled else 0
+        else:
+            level = 0 if enabled else 1
+        self.pi.write(self.relay_out, level)
+
+    def _cb_estop(self, gpio, level, tick):
+        if level == 1:
+            self._estop_rise_tick = tick
+        elif level == 0 and self._estop_rise_tick is not None:
+            self._estop_us = pigpio.tickDiff(self._estop_rise_tick, tick)
+            self._last_update_time = time.time()
 
     def _cb_thr(self, gpio, level, tick):
         if level == 1:
@@ -126,16 +162,26 @@ class RcToCmdVel(Node):
 
         # Failsafe: if signal stops, command 0
         if (now - self._last_update_time) > self.timeout_s:
+            self._set_relay(False)
             self._publish_stop()
             return
 
         # If we haven't received pulses yet
-        if self._thr_us is None or self._yaw_us is None:
+        if self._thr_us is None or self._yaw_us is None or self._estop_us is None:
+            self._set_relay(False)
             self._publish_stop()
             return
 
         linear = map_pwm_to_unit(self._thr_us, self.thr_neu, self.thr_lo, self.thr_hi, self.deadband)
         angular = map_pwm_to_unit(self._yaw_us, self.yaw_neu, self.yaw_lo, self.yaw_hi, self.deadband)
+        estop_enabled = self._estop_us > self.estop_threshold_us
+
+        if not estop_enabled:
+            self._set_relay(False)
+            self._publish_stop()
+            return
+        else:
+            self._set_relay(True)
 
         msg = Twist()
         msg.linear.x = float(linear)
@@ -147,8 +193,10 @@ class RcToCmdVel(Node):
 
     def destroy_node(self):
         try:
+            self._set_relay(False)
             self.cb_thr.cancel()
             self.cb_yaw.cancel()
+            self.cb_estop.cancel()
             self.pi.stop()
         except Exception:
             pass
