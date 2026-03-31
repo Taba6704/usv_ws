@@ -56,7 +56,7 @@ class RcToCmdVel(Node):
         self.declare_parameter('deadband_us', 50)
         self.declare_parameter('publish_hz', 20.0)
         self.declare_parameter('timeout_s', 0.35)
-        self.declare_parameter('cmd_topic', '/cmd_vel')
+        self.declare_parameter('cmd_topic', '/cmd_vel_rc')
 
         # E-Stop controll
         self.declare_parameter('estop_threshold_us', 1500)
@@ -104,6 +104,9 @@ class RcToCmdVel(Node):
 
         # Start in e-stop/safe state until valid switch input is received
         self._set_relay(False)
+
+        # Track previous state for logging
+        self._last_estop_state = None
 
         # Latest pulse widths
         self._thr_us = None
@@ -176,6 +179,17 @@ class RcToCmdVel(Node):
         angular = map_pwm_to_unit(self._yaw_us, self.yaw_neu, self.yaw_lo, self.yaw_hi, self.deadband)
         estop_enabled = self._estop_us > self.estop_threshold_us
 
+        estop_enabled = self._estop_us > self.estop_threshold_us
+
+        # Log ONLY when state changes
+        if estop_enabled != self._last_estop_state:
+            if estop_enabled:
+               self.get_logger().info("🟢 E-STOP: DISENGAGED (SYSTEM ENABLED)")
+            else:
+                self.get_logger().warn("🔴 E-STOP: ENGAGED (SYSTEM STOPPED)")
+            self._last_estop_state = estop_enabled
+
+        # Apply behavior
         if not estop_enabled:
             self._set_relay(False)
             self._publish_stop()
