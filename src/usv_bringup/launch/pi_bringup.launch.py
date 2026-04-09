@@ -38,9 +38,17 @@ def generate_launch_description():
         output='screen'
     )
 
+    cmd_vel_mux_node = Node(
+        package='cmd_vel_mux',
+        executable='cmd_vel_mux_node',
+        name='cmd_vel_mux_node',
+        output='screen'
+    )
+
     return LaunchDescription([
         humidity_node,
         lcd_node_delayed,
         rc_node,
         thruster_node,
+        cmd_vel_mux_node,
     ])
