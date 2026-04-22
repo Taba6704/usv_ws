@@ -60,7 +60,7 @@ class RcToCmdVel(Node):
 
         # E-Stop controll
         self.declare_parameter('estop_threshold_us', 1500)
-        self.declare_parameter('relay_active_high', True)  # set False if  relay is active-low
+        self.declare_parameter('relay_active_high', True)  # set False if relay is active-low
 
         # Read Parameters
         self.gpio_thr = int(self.get_parameter('gpio_throttle').value)
