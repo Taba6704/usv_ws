@@ -123,7 +123,7 @@ class CmdVelMux(Node):
             return
 
         # Determine mode
-        rc_mode = self._mode_us > self.mode_threshold # if CH6 PWM is greter than 1500 us the RC control
+        rc_mode = self._mode_us < self.mode_threshold # if CH6 PWM is greter than 1500 us the RC control
 
         # Log only on change
         if rc_mode != self._last_mode:
