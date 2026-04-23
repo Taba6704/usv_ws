@@ -176,7 +176,7 @@ class RcToCmdVel(Node):
             return
 
         linear = map_pwm_to_unit(self._thr_us, self.thr_neu, self.thr_lo, self.thr_hi, self.deadband)
-        angular = map_pwm_to_unit(self._yaw_us, self.yaw_neu, self.yaw_lo, self.yaw_hi, self.deadband)
+        angular = -map_pwm_to_unit(self._yaw_us, self.yaw_neu, self.yaw_lo, self.yaw_hi, self.deadband)
         estop_enabled = self._estop_us > self.estop_threshold_us
 
         # E-stop logic
